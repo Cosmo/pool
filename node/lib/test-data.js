@@ -18,7 +18,7 @@ var Transaction = require('./transaction');
 
 var data = [
   {
-    activity: {name: 'Burda Hackday', master: 'maccosmo', users: []},
+    activity: {name: 'Burda Hackday', master: 'maccosmo', users: [{name: 'maccosmo'}]},
     transactions: [
       {user: "maccosmo", "amount": 12345, "fee": 123, "currency": "eur"},
       {user: "olcaybuyan", "amount": 10000, "fee": 1, "currency": "eur"},
@@ -33,19 +33,19 @@ var data = [
     ]
   },
   {
-    activity: {name: 'USA Reise', master: 'olcaybuyan', users: []},
+    activity: {name: 'USA Reise', master: 'olcaybuyan', users: [{name: 'olcaybuyan'}]},
     transactions: []
   },
   {
-    activity: {name: 'Roundtrip', master: 'thomaspockrandt', users: []},
+    activity: {name: 'Roundtrip', master: 'thomaspockrandt', users: [{name: 'thomaspockrandt'}]},
     transactions: []
   },
   {
-    activity: {name: 'Pool Party', master: 'donnieraycrisp', users: []},
+    activity: {name: 'Pool Party', master: 'donnieraycrisp', users: [{name: 'donnieraycrisp'}]},
     transactions: []
   },
   {
-    activity: {name: 'Camping Urlaub', master: 'kaimys', users: []},
+    activity: {name: 'Camping Urlaub', master: 'kaimys', users: [{name: 'kaimys'}]},
     transactions: []
   }
 ];
