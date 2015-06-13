@@ -38,9 +38,17 @@ class InitialViewController: UIViewController {
         var viewController2 = ActivitiesTableViewController()
         self.navigationController?.pushViewController(viewController2, animated: true)
     }
+}
 
     /*
 
+=======
+        super.viewDidLoad()
+        
+        // backgroundColor
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+>>>>>>> origin/master
         // navigationBar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.shadowImage  = UIImage()
@@ -71,10 +79,5 @@ class InitialViewController: UIViewController {
             )
         )
     }
-    
-    func loginButtonAction(button: UIButton) {
-        println("loginButtonAction:")
-    }
-
-*/
 }
+*/
