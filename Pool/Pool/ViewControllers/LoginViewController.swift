@@ -8,10 +8,13 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GiniVisionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // gini
+        
         
         // backgroundColor
         self.view.backgroundColor = UIColor.whiteColor()
@@ -38,12 +41,48 @@ class LoginViewController: UIViewController {
             )
         )
         
+        // button: login
+        var loginButton = UIButton()
+        
+        loginButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        loginButton.setTitle("Login", forState: UIControlState.Normal)
+        loginButton.backgroundColor = UIColor.blueColor()
+        loginButton.addTarget(self, action: "loginButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(loginButton)
+        
         self.view.addConstraints(
-            NSLayoutConstraint.constraintsWithVisualFormat("V:|[imageView]",
-                options: NSLayoutFormatOptions.AlignAllLeft,
+            NSLayoutConstraint.constraintsWithVisualFormat("H:|[loginButton]|",
+                options: NSLayoutFormatOptions.AlignAllTop,
                 metrics: nil,
-                views: ["imageView": imageView]
+                views: ["loginButton": loginButton]
             )
         )
+        
+        // constraints: vertical
+        self.view.addConstraints(
+            NSLayoutConstraint.constraintsWithVisualFormat("V:|[imageView]-(>=0)-[loginButton]|",
+                options: NSLayoutFormatOptions(0),
+                metrics: nil,
+                views: ["imageView": imageView, "loginButton": loginButton]
+            )
+        )
+    }
+    
+    func loginButtonAction(button: UIButton) {
+        println("loginButtonAction:")
+        GiniVision.captureImageWithViewController(self, delegate: self)
+    }
+    
+    func didScan(document: UIImage!, documentType docType: GINIDocumentType, uploadDelegate delegate: GINIVisionUploadDelegate!) {
+        println("didScan")
+    }
+    
+    func didScanOriginal(image: UIImage!) {
+        println("didScanOriginal")
+    }
+    
+    func didFinishCapturing(success: Bool) {
+        println("didFinishCapturing")
     }
 }
