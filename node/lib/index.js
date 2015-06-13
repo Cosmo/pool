@@ -69,13 +69,27 @@ server.get('/activities', function (req, res, next) {
 });
 
 server.get('/activities/:id', function (req, res, next) {
-  Activity.findById(req.params.id, function (err, doc) {
+  Activity.findById(req.params.id, function (err, activity) {
     if (err) {
       console.log(err);
       next(err);
     } else {
-      res.send(doc);
-      next();
+      Transaction.find({activity: req.params.id}, function (err, transactions) {
+        if (err) {
+          console.log(err);
+          next(err);
+        } else {
+          var newActivity = {
+            _id: activity._id,
+            name: activity.name,
+            master: activity.master,
+            users: [],
+            transactions: transactions
+          };
+          res.send(newActivity);
+          next();
+        }
+      });
     }
   });
 });
