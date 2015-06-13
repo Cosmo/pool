@@ -5,10 +5,10 @@ module.exports = {
       name: "Burda Hackathon",
       master: "cosmo",
       users: [
-        { name: "donnieray", amount: 500 },
-        { name: "thomazr", amount: -250 },
-        { name: "olcay", amount: -250 },
-        { name: "cosmo", amount: 45 },
+        { name: "donnieray", amount: 500, currency: "eur" },
+        { name: "thomazr", amount: -250, currency: "eur" },
+        { name: "olcay", amount: -250, currency: "eur" },
+        { name: "cosmo", amount: 45, currency: "eur" },
       ]
     },
     {
@@ -16,10 +16,10 @@ module.exports = {
       name: "USA Reise",
       master: "olcay",
       users: [
-        { name: "donnieray", amount: 500 },
-        { name: "thomazr", amount: -250 },
-        { name: "olcay", amount: -250 },
-        { name: "cosmo", amount: 45 },
+        { name: "donnieray", amount: 500, currency: "eur" },
+        { name: "thomazr", amount: -250, currency: "eur" },
+        { name: "olcay", amount: -250, currency: "eur" },
+        { name: "cosmo", amount: 45, currency: "eur" },
       ]
     },
     {
@@ -27,10 +27,10 @@ module.exports = {
       name: "Roadtrip",
       master: "donnieray",
       users: [
-        { name: "donnieray", amount: 500 },
-        { name: "thomazr", amount: -250 },
-        { name: "olcay", amount: -250 },
-        { name: "cosmo", amount: 45 },
+        { name: "donnieray", amount: 500, currency: "eur" },
+        { name: "thomazr", amount: -250, currency: "eur" },
+        { name: "olcay", amount: -250, currency: "eur" },
+        { name: "cosmo", amount: 45, currency: "eur" },
       ]
     }
   ],
@@ -40,10 +40,10 @@ module.exports = {
     master: "olcay",
     name: "USA Reise",
     users: [
-      { name: "donnieray", amount: 500 },
-      { name: "thomazr", amount: -250 },
-      { name: "olcay", amount: -250 },
-      { name: "cosmo", amount: 45 },
+      { name: "donnieray", amount: 500, currency: "eur" },
+      { name: "thomazr", amount: -250, currency: "eur" },
+      { name: "olcay", amount: -250, currency: "eur" },
+      { name: "cosmo", amount: 45, currency: "eur" },
     ],
     transactions: [
       { amount: 2900, fee: 0,   currency: "usd", user: "donnieray" },
