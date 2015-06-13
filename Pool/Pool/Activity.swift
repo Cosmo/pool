@@ -24,4 +24,9 @@ struct Activity: Deserializable {
     static func all() -> Api? {
         return Api().path("/activities")
     }
+    
+    static func detail(id: String) -> Api? {
+        return Api().path("/activities/\(id)")
+    }
+    
 }
