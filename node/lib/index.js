@@ -1,6 +1,6 @@
 var restify = require('restify');
 var mongoose = require('mongoose');
-var fixtures = require('./lib/fixtures');
+var fixtures = require('./fixtures');
 
 var useFixtures = false;
 var port = process.env.PORT || 8080;
@@ -13,7 +13,8 @@ switch (process.env.NODE_ENV) {
     mongoose.connect('mongodb://pool:tzOc4gHSXHJcyGwTCn6WZcW4_2c.M6_C5JmEpzk9uyA-@ds036178.mongolab.com:36178/pool');
 }
 
-var Activity = require('./lib/activity');
+var Activity = require('./activity');
+var Transaction = require('./transaction');
 
 var server = restify.createServer({
   name: 'pool-backend',
@@ -73,6 +74,37 @@ server.get('/activities/:id', function (req, res, next) {
       next(err);
     } else {
       res.send(doc);
+      next();
+    }
+  });
+});
+
+server.post('/activities/:activity/transactions', function (req, res, next) {
+  var transaction = {
+    activity: req.params.activity,
+    user: req.headers['x-header'],
+    amount: parseInt(req.body.amount),
+    fee: parseInt(req.body.fee),
+    currency: req.body.currency
+  };
+  Transaction.create(transaction, function (err, newTransaction) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.send(newTransaction);
+      next();
+    }
+  });
+});
+
+server.get('/activities/:activity/transactions', function (req, res, next) {
+  Transaction.find({activity: req.params.activity}, function (err, docs) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.send(docs);
       next();
     }
   });

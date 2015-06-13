@@ -1,1 +1,1 @@
-web: cd node && node index.js
+web: cd node && node lib/index.js
