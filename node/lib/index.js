@@ -68,7 +68,16 @@ server.get('/activities', function (req, res, next) {
       console.log(err);
       next(err);
     } else {
-      res.send(docs);
+      var result = [];
+      docs.forEach(function(doc) {
+        var userInvited = _.some(doc.users, function(o) {
+          return o.name == req.headers['x-header'];
+        });
+        if (userInvited) {
+          result.push(doc);
+        }
+      });
+      res.send(result);
       next();
     }
   });
@@ -101,7 +110,9 @@ server.post('/activities/:id/invite', function (req, res, next) {
       console.log(err);
       next(err);
     } else {
-      var userAlreadyInvited = _.some(activity.users, function(o) { return o.name == req.body.name; });
+      var userAlreadyInvited = _.some(activity.users, function(o) {
+        return o.name == req.body.name;
+      });
       if(!userAlreadyInvited) {
         activity.users.push({name: req.body.name});
         activity.save(function(err) {
