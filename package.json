@@ -2,7 +2,7 @@
   "name": "pool-backend",
   "version": "0.9.1",
   "description": "Backend for ppol app",
-  "main": "node/index.js",
+  "main": "node/lib/index.js",
   "scripts": {
     "start": "forever start -a -d -v --killSignal=SIGTERM --uid=pool index.js",
     "stop": "forever stop pool",
@@ -17,6 +17,7 @@
   "devDependencies": {
   },
   "dependencies": {
+    "async": "^1.2.1",
     "forever": "*",
     "mongoose": "^4.0.5",
     "restify": "^3.0.3"
