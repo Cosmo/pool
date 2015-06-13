@@ -8,18 +8,12 @@
 
 import UIKit
 
-<<<<<<< HEAD
 class InitialViewController: UITableViewController {
     var data = [Activity]()
     let activityCell = "activityCell"
 
-=======
-class InitialViewController: UIViewController {
->>>>>>> origin/master
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-<<<<<<< HEAD
         self.title = "Pool"
         
         self.tableView.registerClass(ActivityTableViewCell.self, forCellReuseIdentifier: activityCell)
@@ -53,11 +47,7 @@ class InitialViewController: UIViewController {
 
         return cell
     }
-}
-=======
-        // background
-        self.view.backgroundColor = UIColor.whiteColor()
-        
+
         // navigationBar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.shadowImage  = UIImage()
@@ -93,4 +83,3 @@ class InitialViewController: UIViewController {
         println("loginButtonAction:")
     }
 }
->>>>>>> origin/master
