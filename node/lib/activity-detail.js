@@ -18,7 +18,7 @@ function activityDetail(req, res, next) {
             _id: activity._id,
             name: activity.name,
             master: activity.master,
-            users: [],
+            users: activity.users,
             transactions: transactions
           };
           res.send(newActivity);

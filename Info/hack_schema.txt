@@ -6,7 +6,8 @@ name: "USA Reise"
 -> returns: { id: 342890332, name: "USA Reise" }
 
 
-// GET /activities/342890443/invite/donnieraycrisp
+// POST /activities/342890443/invite
+name: donnieraycrisp
 
 x-header: "maccosmo"
 -> returns { name: "USA Reise", ... }
