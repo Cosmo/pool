@@ -4,7 +4,7 @@
   "description": "Backend for ppol app",
   "main": "index.js",
   "scripts": {
-    "start": "forever start -a -d -v --killSignal=SIGTERM --uid=pool index.js",
+    "start": "NODE_ENV=development forever start -a -d -v --killSignal=SIGTERM --uid=pool ./",
     "stop": "forever stop pool",
     "mongo": "mongod --config mongodb.yaml"
   },

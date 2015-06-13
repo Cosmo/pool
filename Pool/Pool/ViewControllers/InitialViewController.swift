@@ -8,13 +8,18 @@
 
 import UIKit
 
+<<<<<<< HEAD
 class InitialViewController: UITableViewController {
     var data = [Activity]()
     let activityCell = "activityCell"
 
+=======
+class InitialViewController: UIViewController {
+>>>>>>> origin/master
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
         self.title = "Pool"
         
         self.tableView.registerClass(ActivityTableViewCell.self, forCellReuseIdentifier: activityCell)
@@ -49,3 +54,43 @@ class InitialViewController: UITableViewController {
         return cell
     }
 }
+=======
+        // background
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        // navigationBar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage  = UIImage()
+        self.navigationController?.navigationBar.translucent  = true
+        self.navigationController?.navigationBar.barStyle     = UIBarStyle.Default
+        
+        // imageView: logo
+        let imageView = UIImageView(
+            image: UIImage(named: "pool-logo")
+        )
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.view.addSubview(imageView)
+        
+        self.view.addConstraints(
+            NSLayoutConstraint.constraintsWithVisualFormat("H:|-(50)-[imageView]-(50)-|",
+                options: NSLayoutFormatOptions.AlignAllTop,
+                metrics: nil,
+                views: ["imageView": imageView]
+            )
+        )
+        
+        self.view.addConstraints(
+            NSLayoutConstraint.constraintsWithVisualFormat("V:|[imageView]",
+                options: NSLayoutFormatOptions.AlignAllLeft,
+                metrics: nil,
+                views: ["imageView": imageView]
+            )
+        )
+    }
+    
+    func loginButtonAction(button: UIButton) {
+        println("loginButtonAction:")
+    }
+}
+>>>>>>> origin/master

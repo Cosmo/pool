@@ -2,6 +2,9 @@ var restify = require('restify');
 var mongoose = require('mongoose');
 var fixtures = require('./lib/fixtures');
 
+var useFixtures = false;
+var port = process.env.PORT || 8080;
+
 switch (process.env.NODE_ENV) {
   case 'development':
     mongoose.connect('mongodb://localhost/pool');
@@ -11,8 +14,6 @@ switch (process.env.NODE_ENV) {
 }
 
 var Activity = require('./lib/activity');
-
-//Activity.create({name: 'Burda Hackday', master: 'kaimys'});
 
 var server = restify.createServer({
   name: 'pool-backend',
@@ -27,27 +28,57 @@ server.get('/echo/:name', function (req, res, next) {
   return next();
 });
 
-server.get('/activities', function (req, res, next) {
+server.get('/fixtures/activities', function (req, res, next) {
   res.send(fixtures.activities);
-  return next();
+  next();
 });
 
-server.get('/activities/:id', function (req, res, next) {
+server.get('/fixtures/activities/:id', function (req, res, next) {
   res.send(fixtures.activity);
-  return next();
+  next();
 });
 
-server.get('/xactivities', function (req, res, next) {
-  Activity.find({}, function (err, docs) {
+server.post('/activities', function (req, res, next) {
+  var activity = {
+    name: req.body.name,
+    master: req.headers['x-header']
+  };
+  Activity.create(activity, function (err, newActivity) {
     if (err) {
       console.log(err);
+      next(err);
     } else {
-      res.send(docs);
-      return next();
+      res.send(newActivity);
+      next();
     }
   });
 });
 
-server.listen(8080, function () {
+server.get('/activities', function (req, res, next) {
+  Activity.find({}, function (err, docs) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.send(docs);
+      next();
+    }
+  });
+});
+
+server.get('/activities/:id', function (req, res, next) {
+  Activity.findById(req.params.id, function (err, doc) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.send(doc);
+      next();
+    }
+  });
+});
+
+
+server.listen(port, function () {
   console.log('%s listening at %s', server.name, server.url);
 });
