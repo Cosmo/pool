@@ -8,8 +8,7 @@
 
 import UIKit
 
-class InitialViewController: UITableViewController {
-
+class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,84 +19,40 @@ class InitialViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // background
-        self.view.backgroundColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor.whiteColor()
         
-        // title
-        self.title = "Pool"
+        // navigationBar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage  = UIImage()
+        self.navigationController?.navigationBar.translucent  = true
+        self.navigationController?.navigationBar.barStyle     = UIBarStyle.Default
+        
+        // imageView: logo
+        let imageView = UIImageView(
+            image: UIImage(named: "pool-logo")
+        )
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.view.addSubview(imageView)
+        
+        self.view.addConstraints(
+            NSLayoutConstraint.constraintsWithVisualFormat("H:|-(50)-[imageView]-(50)-|",
+                options: NSLayoutFormatOptions.AlignAllTop,
+                metrics: nil,
+                views: ["imageView": imageView]
+            )
+        )
+        
+        self.view.addConstraints(
+            NSLayoutConstraint.constraintsWithVisualFormat("V:|[imageView]",
+                options: NSLayoutFormatOptions.AlignAllLeft,
+                metrics: nil,
+                views: ["imageView": imageView]
+            )
+        )
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func loginButtonAction(button: UIButton) {
+        println("loginButtonAction:")
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
