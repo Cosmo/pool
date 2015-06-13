@@ -85,10 +85,10 @@
 		451C39341B2C5A4400391D7E /* Pool */ = {
 			isa = PBXGroup;
 			children = (
-				E90654C81B2C5FEF003C22FF /* Models */,
 				E9D318EB1B2C5EFA00D7DAE0 /* ViewControllers */,
+				E90654C81B2C5FEF003C22FF /* Models */,
+				E90654C91B2C6023003C22FF /* Helpers */,
 				451C39371B2C5A4400391D7E /* AppDelegate.swift */,
-				451C39571B2C5AFF00391D7E /* JSONHelper.swift */,
 				451C393E1B2C5A4400391D7E /* Images.xcassets */,
 				451C39401B2C5A4400391D7E /* LaunchScreen.xib */,
 				451C39351B2C5A4400391D7E /* Supporting Files */,
@@ -130,6 +130,14 @@
 				451C395B1B2C5B8D00391D7E /* Total.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E90654C91B2C6023003C22FF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				451C39571B2C5AFF00391D7E /* JSONHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		E9D318EB1B2C5EFA00D7DAE0 /* ViewControllers */ = {
