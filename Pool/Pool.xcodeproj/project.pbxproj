@@ -119,6 +119,7 @@
 		451C39341B2C5A4400391D7E /* Pool */ = {
 			isa = PBXGroup;
 			children = (
+				451C39711B2C97E100391D7E /* Views */,
 				E9D318EB1B2C5EFA00D7DAE0 /* ViewControllers */,
 				E90654C81B2C5FEF003C22FF /* Models */,
 				E90654C91B2C6023003C22FF /* Helpers */,
@@ -155,6 +156,15 @@
 				451C394C1B2C5A4400391D7E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		451C39711B2C97E100391D7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				451C396F1B2C90E700391D7E /* TransactionTableViewCell.swift */,
+				451C39651B2C69D900391D7E /* ActivityTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E90654C81B2C5FEF003C22FF /* Models */ = {
@@ -194,14 +204,11 @@
 		E9D318EB1B2C5EFA00D7DAE0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E90654C61B2C5F4D003C22FF /* InitialViewController.swift */,
 				E90654F21B2C7DAE003C22FF /* LoginViewController.swift */,
 				451C39671B2C770100391D7E /* ActivitiesTableViewController.swift */,
 				451C396B1B2C782400391D7E /* ActivityDetailTableViewController.swift */,
 				E90654C61B2C5F4D003C22FF /* InitialViewController.swift */,
 				451C396D1B2C84D300391D7E /* InviteTableViewController.swift */,
-				451C396F1B2C90E700391D7E /* TransactionTableViewCell.swift */,
-				451C39651B2C69D900391D7E /* ActivityTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
