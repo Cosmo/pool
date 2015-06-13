@@ -2,22 +2,20 @@
 //  AppDelegate.swift
 //  Pool
 //
-//  Created by Thomas Pockrandt on 13/06/15.
-//  Copyright © 2015 Burda Hackday 3. All rights reserved.
+//  Created by Devran Uenal on 13.06.15.
+//  Copyright (c) 2015 PoolParty. All rights reserved.
 //
 
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
     var window: UIWindow?
+
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.rootViewController = UINavigationController(rootViewController: InitialViewController())
-        self.window!.makeKeyAndVisible()
-        
         return true
     }
 
