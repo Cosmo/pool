@@ -20,6 +20,7 @@
 		451C39641B2C624E00391D7E /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39621B2C624E00391D7E /* HTTPRequest.swift */; };
 		451C39661B2C69D900391D7E /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39651B2C69D900391D7E /* ActivityTableViewCell.swift */; };
 		451C39681B2C770100391D7E /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39671B2C770100391D7E /* ActivitiesTableViewController.swift */; };
+		451C396C1B2C782400391D7E /* ActivityDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C396B1B2C782400391D7E /* ActivityDetailTableViewController.swift */; };
 		E90654C71B2C5F4D003C22FF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90654C61B2C5F4D003C22FF /* InitialViewController.swift */; };
 		E90654D21B2C7204003C22FF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90654D11B2C7204003C22FF /* AssetsLibrary.framework */; };
 		E90654D41B2C720D003C22FF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90654D31B2C720D003C22FF /* CoreMedia.framework */; };
@@ -57,6 +58,7 @@
 		451C39621B2C624E00391D7E /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		451C39651B2C69D900391D7E /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		451C39671B2C770100391D7E /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesTableViewController.swift; path = ViewControllers/ActivitiesTableViewController.swift; sourceTree = "<group>"; };
+		451C396B1B2C782400391D7E /* ActivityDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityDetailTableViewController.swift; path = ViewControllers/ActivityDetailTableViewController.swift; sourceTree = "<group>"; };
 		E90654C61B2C5F4D003C22FF /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialViewController.swift; path = ViewControllers/InitialViewController.swift; sourceTree = "<group>"; };
 		E90654D11B2C7204003C22FF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E90654D31B2C720D003C22FF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -186,6 +188,7 @@
 			children = (
 				E90654C61B2C5F4D003C22FF /* InitialViewController.swift */,
 				451C39671B2C770100391D7E /* ActivitiesTableViewController.swift */,
+				451C396B1B2C782400391D7E /* ActivityDetailTableViewController.swift */,
 				451C39651B2C69D900391D7E /* ActivityTableViewCell.swift */,
 			);
 			name = ViewControllers;
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				451C395C1B2C5B8D00391D7E /* Total.swift in Sources */,
+				451C396C1B2C782400391D7E /* ActivityDetailTableViewController.swift in Sources */,
 				E90654C71B2C5F4D003C22FF /* InitialViewController.swift in Sources */,
 				451C39661B2C69D900391D7E /* ActivityTableViewCell.swift in Sources */,
 				451C39581B2C5AFF00391D7E /* JSONHelper.swift in Sources */,

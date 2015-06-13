@@ -45,4 +45,9 @@ class ActivitiesTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let viewController = ActivityDetailTableViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
