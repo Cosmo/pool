@@ -16,6 +16,9 @@
 		451C395C1B2C5B8D00391D7E /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C395B1B2C5B8D00391D7E /* Total.swift */; };
 		451C395E1B2C5BB000391D7E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C395D1B2C5BB000391D7E /* Transaction.swift */; };
 		451C39601B2C5BCC00391D7E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C395F1B2C5BCC00391D7E /* User.swift */; };
+		451C39631B2C624E00391D7E /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39611B2C624E00391D7E /* RequestHelper.swift */; };
+		451C39641B2C624E00391D7E /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39621B2C624E00391D7E /* HTTPRequest.swift */; };
+		451C39661B2C69D900391D7E /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39651B2C69D900391D7E /* ActivityTableViewCell.swift */; };
 		E90654C71B2C5F4D003C22FF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90654C61B2C5F4D003C22FF /* InitialViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 		451C395B1B2C5B8D00391D7E /* Total.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
 		451C395D1B2C5BB000391D7E /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		451C395F1B2C5BCC00391D7E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		451C39611B2C624E00391D7E /* RequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
+		451C39621B2C624E00391D7E /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		451C39651B2C69D900391D7E /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		E90654C61B2C5F4D003C22FF /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialViewController.swift; path = ViewControllers/InitialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,7 @@
 				E90654C81B2C5FEF003C22FF /* Models */,
 				E90654C91B2C6023003C22FF /* Helpers */,
 				451C39371B2C5A4400391D7E /* AppDelegate.swift */,
+				451C39651B2C69D900391D7E /* ActivityTableViewCell.swift */,
 				451C393E1B2C5A4400391D7E /* Images.xcassets */,
 				451C39401B2C5A4400391D7E /* LaunchScreen.xib */,
 				451C39351B2C5A4400391D7E /* Supporting Files */,
@@ -136,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				451C39571B2C5AFF00391D7E /* JSONHelper.swift */,
+				451C39621B2C624E00391D7E /* HTTPRequest.swift */,
+				451C39611B2C624E00391D7E /* RequestHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -249,10 +258,13 @@
 			files = (
 				451C395C1B2C5B8D00391D7E /* Total.swift in Sources */,
 				E90654C71B2C5F4D003C22FF /* InitialViewController.swift in Sources */,
+				451C39661B2C69D900391D7E /* ActivityTableViewCell.swift in Sources */,
 				451C39581B2C5AFF00391D7E /* JSONHelper.swift in Sources */,
 				451C395E1B2C5BB000391D7E /* Transaction.swift in Sources */,
 				451C395A1B2C5B5D00391D7E /* Activity.swift in Sources */,
 				451C39381B2C5A4400391D7E /* AppDelegate.swift in Sources */,
+				451C39631B2C624E00391D7E /* RequestHelper.swift in Sources */,
+				451C39641B2C624E00391D7E /* HTTPRequest.swift in Sources */,
 				451C39601B2C5BCC00391D7E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
