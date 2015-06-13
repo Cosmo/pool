@@ -1,14 +1,14 @@
 // POST /activities/
 
-x-header: "cosmo"
+x-header: "maccosmo"
 name: "USA Reise"
 
 -> returns: { id: 342890332, name: "USA Reise" }
 
 
-// GET /activities/342890443/invite/donnieray
+// GET /activities/342890443/invite/donnieraycrisp
 
-x-header: "cosmo"
+x-header: "maccosmo"
 -> returns { name: "USA Reise", ... }
 
 // GET /activities/
@@ -17,56 +17,56 @@ x-header: "cosmo"
   {
     id: 3423490823,
     name: "Burda Hackathon",
-    master: "cosmo",
+    master: "maccosmo",
     users: [
-      { name: "donnieray", amount: 500 }, 
-      { name: "thomazr", amount: -250 }, 
-      { name: "olcay", amount: -250 }, 
-      { name: "cosmo", amount: 45 },
+      { name: "donnieraycrisp", amount: 500 }, 
+      { name: "thomaspockrandt", amount: -250 }, 
+      { name: "olcaybuyan", amount: -250 }, 
+      { name: "maccosmo", amount: 45 },
     ]
   },
   {
     id: 3423490823,
     name: "USA Reise",
-    master: "olcay",
+    master: "olcaybuyan",
     users: [
-      { name: "donnieray", amount: 500 }, 
-      { name: "thomazr", amount: -250 }, 
-      { name: "olcay", amount: -250 }, 
-      { name: "cosmo", amount: 45 },
+      { name: "donnieraycrisp", amount: 500 }, 
+      { name: "thomaspockrandt", amount: -250 }, 
+      { name: "olcaybuyan", amount: -250 }, 
+      { name: "maccosmo", amount: 45 },
     ]
   },
   {
     id: 3423490823,
     name: "Roadtrip",
-    master: "donnieray"
+    master: "donnieraycrisp"
     users: [
-      { name: "donnieray", amount: 500 }, 
-      { name: "thomazr", amount: -250 }, 
-      { name: "olcay", amount: -250 }, 
-      { name: "cosmo", amount: 45 },
+      { name: "donnieraycrisp", amount: 500 }, 
+      { name: "thomaspockrandt", amount: -250 }, 
+      { name: "olcaybuyan", amount: -250 }, 
+      { name: "maccosmo", amount: 45 },
     ]
   }
 ]
 
 // GET /activities/3242
 
-x-header: "cosmo"
+x-header: "maccosmo"
 
 -> {
   id: 3423490823,
-  master: "olcay",
+  master: "olcaybuyan",
   name: "USA Reise",
   users: [
-    { name: "donnieray", amount: 500 }, 
-    { name: "thomazr", amount: -250 }, 
-    { name: "olcay", amount: -250 }, 
-    { name: "cosmo", amount: 45 }, 
+    { name: "donnieraycrisp", amount: 500 }, 
+    { name: "thomaspockrandt", amount: -250 }, 
+    { name: "olcaybuyan", amount: -250 }, 
+    { name: "maccosmo", amount: 45 }, 
   ],
   transactions: [
-    { amount: 2900, fee: 0,   currency: "usd", user: "donnieray" },
-    { amount: 999,  fee: 150, currency: "eur", user: "thomazr" },
-    { amount: 350,  fee: 150, currency: "usd", user: "cosmo" },
+    { amount: 2900, fee: 0,   currency: "usd", user: "donnieraycrisp" },
+    { amount: 999,  fee: 150, currency: "eur", user: "thomaspockrandt" },
+    { amount: 350,  fee: 150, currency: "usd", user: "maccosmo" },
   ],
   total: {
     amount: 4899,
@@ -77,7 +77,7 @@ x-header: "cosmo"
 
 // POST /activities/3242/transactions/
 
-x-header: "cosmo"
+x-header: "maccosmo"
 amount:   2910
 fee:      0
 currency: "usd"
