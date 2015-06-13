@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "forever start -a -d -v --killSignal=SIGTERM --uid=pool index.js",
-    "stop": "forever stop pool"
+    "stop": "forever stop pool",
+    "mongo": "mongod --config mongodb.yaml"
   },
   "author": "",
   "license": "ISC",
