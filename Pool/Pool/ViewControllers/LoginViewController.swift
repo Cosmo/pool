@@ -71,9 +71,13 @@ class LoginViewController: UIViewController, GiniVisionDelegate {
     
     func loginButtonAction(button: UIButton) {
         println("loginButtonAction:")
+        
+        // gini
         GiniVision.captureImageWithViewController(self, delegate: self)
     }
     
+    
+    // gini delegates
     func didScan(document: UIImage!, documentType docType: GINIDocumentType, uploadDelegate delegate: GINIVisionUploadDelegate!) {
         println("didScan")
     }
