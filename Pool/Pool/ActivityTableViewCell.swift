@@ -9,16 +9,17 @@
 import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
-    var usernameLabel: UILabel
+    var usernameLabel:          UILabel
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        self.usernameLabel = UILabel()
+        self.usernameLabel          = UILabel()
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         self.contentView.addSubview(self.usernameLabel)
     }
 
@@ -28,6 +29,8 @@ class ActivityTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.usernameLabel.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        
+        self.usernameLabel.frame        = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
     }
+
 }

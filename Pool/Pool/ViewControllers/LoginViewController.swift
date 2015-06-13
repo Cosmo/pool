@@ -8,13 +8,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, GiniVisionDelegate {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // gini
-        
         
         // backgroundColor
         self.view.backgroundColor = UIColor.whiteColor()
@@ -41,52 +38,12 @@ class LoginViewController: UIViewController, GiniVisionDelegate {
             )
         )
         
-        // button: login
-        var loginButton = UIButton()
-        
-        loginButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        loginButton.setTitle("Login", forState: UIControlState.Normal)
-        loginButton.backgroundColor = UIColor.blueColor()
-        loginButton.addTarget(self, action: "loginButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        self.view.addSubview(loginButton)
-        
         self.view.addConstraints(
-            NSLayoutConstraint.constraintsWithVisualFormat("H:|[loginButton]|",
-                options: NSLayoutFormatOptions.AlignAllTop,
+            NSLayoutConstraint.constraintsWithVisualFormat("V:|[imageView]",
+                options: NSLayoutFormatOptions.AlignAllLeft,
                 metrics: nil,
-                views: ["loginButton": loginButton]
+                views: ["imageView": imageView]
             )
         )
-        
-        // constraints: vertical
-        self.view.addConstraints(
-            NSLayoutConstraint.constraintsWithVisualFormat("V:|[imageView]-(>=0)-[loginButton]|",
-                options: NSLayoutFormatOptions(0),
-                metrics: nil,
-                views: ["imageView": imageView, "loginButton": loginButton]
-            )
-        )
-    }
-    
-    func loginButtonAction(button: UIButton) {
-        println("loginButtonAction:")
-        
-        // gini
-        GiniVision.captureImageWithViewController(self, delegate: self)
-    }
-    
-    
-    // gini delegates
-    func didScan(document: UIImage!, documentType docType: GINIDocumentType, uploadDelegate delegate: GINIVisionUploadDelegate!) {
-        println("didScan")
-    }
-    
-    func didScanOriginal(image: UIImage!) {
-        println("didScanOriginal")
-    }
-    
-    func didFinishCapturing(success: Bool) {
-        println("didFinishCapturing")
     }
 }

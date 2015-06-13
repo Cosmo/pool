@@ -13,16 +13,6 @@ struct User: Deserializable {
     var amount:   Int?
     var currency: String?
     
-    var avatarURL: String? {
-        get {
-            if let name = self.name {
-                return "https://twitter.com/\(name)/profile_image?size=original"
-            } else {
-                return nil
-            }
-        }
-    }
-    
     init(data: [String: AnyObject]) {
         name      <-- data["name"]
         amount    <-- data["amount"]

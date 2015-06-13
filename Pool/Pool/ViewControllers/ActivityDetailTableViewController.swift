@@ -9,17 +9,6 @@
 import UIKit
 
 class ActivityDetailTableViewController: UITableViewController {
-    private var _id: String?
-    
-    var data: Activity?
-    
-    let transactionCell = "transactionCell"
-    
-    convenience init(id: String) {
-        self.init()
-        self._id = id
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Details"
@@ -48,39 +37,13 @@ class ActivityDetailTableViewController: UITableViewController {
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            if let count = self.data?.transactions?.count {
-                return count
-            } else {
-                return 0
-            }
-        case 1:
-            if let count = self.data?.users?.count {
-                return count
-            } else {
-                return 0
-            }
-        default:
-            return 0
-        }
+        return 0
     }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Transactions"
-        case 1:
-            return "People"
-        default:
-            return ""
-        }
-    }
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: TransactionTableViewCell
         cell = tableView.dequeueReusableCellWithIdentifier(transactionCell, forIndexPath: indexPath) as! TransactionTableViewCell
@@ -99,5 +62,4 @@ class ActivityDetailTableViewController: UITableViewController {
         
         return cell
     }
-    
 }

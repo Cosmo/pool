@@ -91,6 +91,31 @@ server.post('/activities/:activity/transactions', function (req, res, next) {
   });
 });
 
+server.post('/activities/:id/invite', function (req, res, next) {
+  Activity.findById(req.params.id, function (err, activity) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      if(activity.users.indexOf(req.body.name) < 0) {
+        activity.users.push(req.body.name);
+        activity.update(function(err) {
+          if (err) {
+            console.log(err);
+            next(err);
+          } else {
+            res.send(activity);
+            next();
+          }
+        });
+      } else {
+        res.send(activity);
+        next();
+      }
+    }
+  });
+});
+
 server.get('/activities/:activity/transactions', function (req, res, next) {
   Transaction.find({activity: req.params.activity}, function (err, docs) {
     if (err) {
