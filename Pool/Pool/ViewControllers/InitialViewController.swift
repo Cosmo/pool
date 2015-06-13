@@ -27,7 +27,6 @@ class InitialViewController: UITableViewController {
         }).failure({ (data, response, error) -> () in
             println("failure")
         }).call()
-        
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -47,6 +46,7 @@ class InitialViewController: UITableViewController {
 
         return cell
     }
+    /*
 
         // navigationBar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
@@ -82,4 +82,6 @@ class InitialViewController: UITableViewController {
     func loginButtonAction(button: UIButton) {
         println("loginButtonAction:")
     }
+
+*/
 }
