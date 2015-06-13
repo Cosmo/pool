@@ -17,6 +17,7 @@
   "devDependencies": {
   },
   "dependencies": {
+    "async": "^1.2.1",
     "forever": "*",
     "mongoose": "^4.0.5",
     "restify": "^3.0.3"

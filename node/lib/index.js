@@ -1,8 +1,9 @@
+'use strict';
+
 var restify = require('restify');
 var mongoose = require('mongoose');
 var fixtures = require('./fixtures');
 
-var useFixtures = false;
 var port = process.env.PORT || 8080;
 
 switch (process.env.NODE_ENV) {
