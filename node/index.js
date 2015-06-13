@@ -13,7 +13,6 @@ switch (process.env.NODE_ENV) {
     mongoose.connect('mongodb://pool:tzOc4gHSXHJcyGwTCn6WZcW4_2c.M6_C5JmEpzk9uyA-@ds036178.mongolab.com:36178/pool');
 }
 
-var resultOk = {result: 'OK'};
 var Activity = require('./lib/activity');
 
 var server = restify.createServer({
@@ -29,48 +28,56 @@ server.get('/echo/:name', function (req, res, next) {
   return next();
 });
 
-if (useFixtures) {
+server.get('/fixtures/activities', function (req, res, next) {
+  res.send(fixtures.activities);
+  next();
+});
 
-  server.get('/activities', function (req, res, next) {
-    res.send(fixtures.activities);
-    next();
+server.get('/fixtures/activities/:id', function (req, res, next) {
+  res.send(fixtures.activity);
+  next();
+});
+
+server.post('/activities', function (req, res, next) {
+  var activity = {
+    name: req.body.name,
+    master: req.headers['x-header']
+  };
+  Activity.create(activity, function (err, newActivity) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.send(newActivity);
+      next();
+    }
   });
+});
 
-  server.get('/activities/:id', function (req, res, next) {
-    res.send(fixtures.activity);
-    next();
+server.get('/activities', function (req, res, next) {
+  Activity.find({}, function (err, docs) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.send(docs);
+      next();
+    }
   });
+});
 
-} else {
-
-  server.post('/activities', function (req, res, next) {
-    var activity = {
-      name: req.body.name,
-      master: req.headers['x-header']
-    };
-    Activity.create(activity, function (err, newActivity) {
-      if (err) {
-        console.log(err);
-        next(err);
-      } else {
-        res.send(newActivity);
-        next();
-      }
-    });
+server.get('/activities/:id', function (req, res, next) {
+  Activity.findById(req.params.id, function (err, doc) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.send(doc);
+      next();
+    }
   });
+});
 
-  server.get('/activities', function (req, res, next) {
-    Activity.find({}, function (err, docs) {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send(docs);
-        next();
-      }
-    });
-  });
-
-}
 
 server.listen(port, function () {
   console.log('%s listening at %s', server.name, server.url);
