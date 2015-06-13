@@ -8,10 +8,13 @@
 
 import UIKit
 
-class InitialViewController: UITableViewController {
-
-    /*
-
+class InitialViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // backgroundColor
+        self.view.backgroundColor = UIColor.whiteColor()
+        
         // navigationBar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.shadowImage  = UIImage()
@@ -42,10 +45,4 @@ class InitialViewController: UITableViewController {
             )
         )
     }
-    
-    func loginButtonAction(button: UIButton) {
-        println("loginButtonAction:")
-    }
-
-*/
 }
