@@ -17,6 +17,8 @@ switch (process.env.NODE_ENV) {
 var Activity = require('./activity');
 var Transaction = require('./transaction');
 
+var activityDetail = require('./activity-detail');
+
 var server = restify.createServer({
   name: 'pool-backend',
   version: '1.0.0'
@@ -68,31 +70,7 @@ server.get('/activities', function (req, res, next) {
   });
 });
 
-server.get('/activities/:id', function (req, res, next) {
-  Activity.findById(req.params.id, function (err, activity) {
-    if (err) {
-      console.log(err);
-      next(err);
-    } else {
-      Transaction.find({activity: req.params.id}, function (err, transactions) {
-        if (err) {
-          console.log(err);
-          next(err);
-        } else {
-          var newActivity = {
-            _id: activity._id,
-            name: activity.name,
-            master: activity.master,
-            users: [],
-            transactions: transactions
-          };
-          res.send(newActivity);
-          next();
-        }
-      });
-    }
-  });
-});
+server.get('/activities/:id', activityDetail);
 
 server.post('/activities/:activity/transactions', function (req, res, next) {
   var transaction = {
