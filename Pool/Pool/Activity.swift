@@ -16,8 +16,12 @@ struct Activity: Deserializable {
     var users:        [User]?
     
     init(data: [String: AnyObject]) {
-        id            <-- data["id"]
+        id            <-- data["_id"]
         name          <-- data["name"]
         transactions  <-- data["transactions"]
+    }
+    
+    static func all() -> Api? {
+        return Api().path("/activities")
     }
 }
