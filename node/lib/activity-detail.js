@@ -28,7 +28,10 @@ function activityDetail(req, res, next) {
             name: activity.name,
             master: activity.master,
             users: users.select(function (u) { return { name: u.key, amount: Math.floor(u.amount) }}),
-            transactions: transactions
+            transactions: transactions,
+            total: {
+                amount: amountTotal, currency: "eur"
+            }
           };
           res.send(newActivity);
           next();
