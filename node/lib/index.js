@@ -20,7 +20,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 var Activity = require('./activity');
 var Transaction = require('./transaction');
 
-var activityDetail = require('./activity-detail2');
+var activityDetail = require('./activity-detail');
 
 var server = restify.createServer({
   name: 'pool-backend',
