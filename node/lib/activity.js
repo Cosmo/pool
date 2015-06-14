@@ -7,7 +7,7 @@ var activitySchema = new Schema({
   id:       Schema.ObjectId,
   name:     String,
   master:   String,
-  users:    [String]
+  users:    [{ name: String }]
 });
 
 module.exports = mongoose.model('Activity', activitySchema);

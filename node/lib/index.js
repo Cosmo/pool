@@ -2,6 +2,7 @@
 
 var restify = require('restify');
 var mongoose = require('mongoose');
+var _ = require('underscore');
 var fixtures = require('./fixtures');
 
 var port = process.env.PORT || 8080;
@@ -13,11 +14,13 @@ switch (process.env.NODE_ENV) {
   default:
     mongoose.connect('mongodb://pool:tzOc4gHSXHJcyGwTCn6WZcW4_2c.M6_C5JmEpzk9uyA-@ds036178.mongolab.com:36178/pool');
 }
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
 
 var Activity = require('./activity');
 var Transaction = require('./transaction');
 
-var activityDetail = require('./activity-detail');
+var activityDetail = require('./activity-detail2');
 
 var server = restify.createServer({
   name: 'pool-backend',
@@ -45,7 +48,8 @@ server.get('/fixtures/activities/:id', function (req, res, next) {
 server.post('/activities', function (req, res, next) {
   var activity = {
     name: req.body.name,
-    master: req.headers['x-header']
+    master: req.headers['x-header'],
+    users: [{name: req.headers['x-header']}]
   };
   Activity.create(activity, function (err, newActivity) {
     if (err) {
@@ -64,7 +68,16 @@ server.get('/activities', function (req, res, next) {
       console.log(err);
       next(err);
     } else {
-      res.send(docs);
+      var result = [];
+      docs.forEach(function(doc) {
+        var userInvited = _.some(doc.users, function(o) {
+          return o.name == req.headers['x-header'];
+        });
+        if (userInvited) {
+          result.push(doc);
+        }
+      });
+      res.send(result);
       next();
     }
   });
@@ -97,9 +110,12 @@ server.post('/activities/:id/invite', function (req, res, next) {
       console.log(err);
       next(err);
     } else {
-      if(activity.users.indexOf(req.body.name) < 0) {
-        activity.users.push(req.body.name);
-        activity.update(function(err) {
+      var userAlreadyInvited = _.some(activity.users, function(o) {
+        return o.name == req.body.name;
+      });
+      if(!userAlreadyInvited) {
+        activity.users.push({name: req.body.name});
+        activity.save(function(err) {
           if (err) {
             console.log(err);
             next(err);
