@@ -89,6 +89,7 @@ server.post('/activities/:activity/transactions', function (req, res, next) {
   var transaction = {
     activity: req.params.activity,
     user: req.headers['x-header'],
+    name: req.body.name,
     amount: parseInt(req.body.amount),
     fee: parseInt(req.body.fee),
     currency: req.body.currency

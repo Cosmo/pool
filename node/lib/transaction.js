@@ -7,6 +7,7 @@ var transactionSchema = new Schema({
   id:       Schema.ObjectId,
   activity: String,
   user:     String,
+  name:     String,
   amount:   Number,
   fee:      Number,
   currency: String

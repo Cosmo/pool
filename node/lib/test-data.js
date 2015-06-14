@@ -22,46 +22,46 @@ var data = [
   {
     activity: {name: 'Burda Hackday', master: 'maccosmo', users: allUsers},
     transactions: [
-      {user: "maccosmo", "amount": 12345, "fee": 123, "currency": "eur"},
-      {user: "olcaybuyan", "amount": 10000, "fee": 1, "currency": "eur"},
-      {user: "thomaspockrandt", "amount": 5000, "fee": 0, "currency": "eur"},
-      {user: "donnieraycrisp", "amount": 66000, "fee": 660, "currency": "eur"},
-      {user: "kaimys", "amount": 100000, "fee": 1000, "currency": "eur"},
-      {user: "maccosmo", "amount": 666, "fee": 0, "currency": "eur"},
-      {user: "olcaybuyan", "amount": 12345, "fee": 0, "currency": "eur"},
-      {user: "thomaspockrandt", "amount": 1000, "fee": 0, "currency": "eur"},
-      {user: "donnieraycrisp", "amount": 10, "fee": 0, "currency": "eur"},
-      {user: "kaimys", "amount": 99, "fee": 0, "currency": "eur"}      
+      {name: 'iWatch battery extender', user: 'maccosmo', "amount": 12345, "fee": 123, "currency": "eur"},
+      {name: 'Lufhansa', user: 'olcaybuyan', "amount": 10000, "fee": 1, "currency": "eur"},
+      {name: 'Dinner', user: 'thomaspockrandt', "amount": 5000, "fee": 0, "currency": "eur"},
+      {name: 'Buntstifte', user: 'donnieraycrisp', "amount": 66000, "fee": 660, "currency": "eur"},
+      {name: 'Blumenstrauss', user: 'kaimys', "amount": 100000, "fee": 1000, "currency": "eur"},
+      {name: 'Big Mac', user: 'maccosmo', "amount": 666, "fee": 0, "currency": "eur"},
+      {name: 'iOS for Dummies', user: 'olcaybuyan', "amount": 12345, "fee": 0, "currency": "eur"},
+      {name: 'Secrets of El Cap', user: 'thomaspockrandt', "amount": 1000, "fee": 0, "currency": "eur"},
+      {name: 'Radiergummi', user: 'donnieraycrisp', "amount": 10, "fee": 0, "currency": "eur"},
+      {name: 'Kaugummi', user: 'kaimys', "amount": 99, "fee": 0, "currency": "eur"}
     ]
   },
   {
     activity: {name: 'USA Reise', master: 'maccosmo', users: allUsers},
     transactions: [
-      {user: "maccosmo", "amount": 12345, "fee": 123, "currency": "eur"},
-      {user: "olcaybuyan", "amount": 10000, "fee": 1, "currency": "eur"},
-      {user: "thomaspockrandt", "amount": 5000, "fee": 0, "currency": "eur"},
-      {user: "donnieraycrisp", "amount": 66000, "fee": 660, "currency": "eur"},
-      {user: "kaimys", "amount": 100000, "fee": 1000, "currency": "eur"},
-      {user: "maccosmo", "amount": 666, "fee": 0, "currency": "eur"},
-      {user: "olcaybuyan", "amount": 12345, "fee": 0, "currency": "eur"},
-      {user: "thomaspockrandt", "amount": 1000, "fee": 0, "currency": "eur"},
-      {user: "donnieraycrisp", "amount": 10, "fee": 0, "currency": "eur"},
-      {user: "kaimys", "amount": 99, "fee": 0, "currency": "eur"}
+      {name: 'Hotel', user: 'maccosmo', "amount": 12345, "fee": 123, "currency": "eur"},
+      {name: 'Taxi', user: 'olcaybuyan', "amount": 10000, "fee": 1, "currency": "eur"},
+      {name: 'Dinner', user: 'thomaspockrandt', "amount": 5000, "fee": 0, "currency": "eur"},
+      {name: 'Pampers', user: 'donnieraycrisp', "amount": 66000, "fee": 660, "currency": "eur"},
+      {name: 'Uber', user: 'kaimys', "amount": 100000, "fee": 1000, "currency": "eur"},
+      {name: 'Big Mac', user: 'maccosmo', "amount": 666, "fee": 0, "currency": "eur"},
+      {name: 'Trip to Sausalito', user: 'olcaybuyan', "amount": 12345, "fee": 0, "currency": "eur"},
+      {name: 'Taxi', user: 'thomaspockrandt', "amount": 1000, "fee": 0, "currency": "eur"},
+      {name: 'BART Ticket', user: 'donnieraycrisp', "amount": 10, "fee": 0, "currency": "eur"},
+      {name: 'Miete Wohnwagen', user: 'kaimys', "amount": 99, "fee": 0, "currency": "eur"}
     ]
   },
   {
     activity: {name: 'Roundtrip', master: 'maccosmo', users: allUsers},
     transactions: [
-      {user: "maccosmo", "amount": 12345, "fee": 123, "currency": "eur"},
-      {user: "olcaybuyan", "amount": 10000, "fee": 1, "currency": "eur"},
-      {user: "thomaspockrandt", "amount": 5000, "fee": 0, "currency": "eur"},
-      {user: "donnieraycrisp", "amount": 66000, "fee": 660, "currency": "eur"},
-      {user: "kaimys", "amount": 100000, "fee": 1000, "currency": "eur"},
-      {user: "maccosmo", "amount": 666, "fee": 0, "currency": "eur"},
-      {user: "olcaybuyan", "amount": 12345, "fee": 0, "currency": "eur"},
-      {user: "thomaspockrandt", "amount": 1000, "fee": 0, "currency": "eur"},
-      {user: "donnieraycrisp", "amount": 10, "fee": 0, "currency": "eur"},
-      {user: "kaimys", "amount": 99, "fee": 0, "currency": "eur"}
+      {name: 'Hotel', user: 'maccosmo', "amount": 12345, "fee": 123, "currency": "eur"},
+      {name: 'Taxi', user: 'olcaybuyan', "amount": 10000, "fee": 1, "currency": "eur"},
+      {name: 'Dinner', user: 'thomaspockrandt', "amount": 5000, "fee": 0, "currency": "eur"},
+      {name: 'Hotel', user: 'donnieraycrisp', "amount": 66000, "fee": 660, "currency": "eur"},
+      {name: 'Taxi', user: 'kaimys', "amount": 100000, "fee": 1000, "currency": "eur"},
+      {name: 'Dinner', user: 'maccosmo', "amount": 666, "fee": 0, "currency": "eur"},
+      {name: 'Hotel', user: 'olcaybuyan', "amount": 12345, "fee": 0, "currency": "eur"},
+      {name: 'Taxi', user: 'thomaspockrandt', "amount": 1000, "fee": 0, "currency": "eur"},
+      {name: 'Dinner', user: 'donnieraycrisp', "amount": 10, "fee": 0, "currency": "eur"},
+      {name: 'Tip', user: 'kaimys', "amount": 99, "fee": 0, "currency": "eur"}
     ]
   },
   {

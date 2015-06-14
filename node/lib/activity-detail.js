@@ -1,8 +1,9 @@
 'use strict';
 
+require('linqjs');
+
 var Activity = require('./activity');
 var Transaction = require('./transaction');
-var Enumerable = require('linqjs');
 
 function activityDetail(req, res, next) {
   Activity.findById(req.params.id, function (err, activity) {
