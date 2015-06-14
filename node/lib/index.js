@@ -4,6 +4,7 @@ var restify = require('restify');
 var mongoose = require('mongoose');
 var _ = require('underscore');
 var fixtures = require('./fixtures');
+var rates = require('./get-rates');
 
 var port = process.env.PORT || 8080;
 
@@ -145,6 +146,16 @@ server.get('/activities/:activity/transactions', function (req, res, next) {
   });
 });
 
+server.post('/convertToEur', function (req, res, next) {
+  if (rates[req.body.currency]) {
+    var amount = Math.round(rates[req.body.currency] * req.body.amount);
+    res.send({currency: 'eur', amount: amount});
+    next();
+  } else {
+    console.log('Currency table not loaded');
+    next('Exchange rates not loaded!');
+  }
+});
 
 server.listen(port, function () {
   console.log('%s listening at %s', server.name, server.url);
