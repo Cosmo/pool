@@ -2,6 +2,7 @@
 
 var Activity = require('./activity');
 var Transaction = require('./transaction');
+var Enumerable = require('linqjs');
 
 function activityDetail(req, res, next) {
   Activity.findById(req.params.id, function (err, activity) {
@@ -14,30 +15,19 @@ function activityDetail(req, res, next) {
           console.log(err);
           next(err);
         } else {
+            var users = transactions.groupBy(function (t) { return t.user });
 
-            // users = [{name:"donnie",amount:250},{name:"thomas",amount:-110},...]
-            // transactions = [{amount:290,fee:3,currency:"usd",user:"donnie"},...]
+            var amountTotal = transactions.sum(function(t) { return t.amount + t.fee });
 
-            var users = Enumerable.From(transactions)
-                .GroupBy("{ name: $.name }", null,
-                    function (key, g) {
-                        var result = {
-                            name: key.name,
-                            paidTotal: g.Sum($.amount)
-                        }
-                    });
-
-            var amountTotal = Enumerable.From(transactions).Sum(function (t) { return t.amount });
-
-            users.ForEach(function(u) {
-                u.amount = (((amountTotal / users.length) - u.amount) * -1);
+            users.forEach(function(u) {
+                u.amount = (((amountTotal / users.length) - u.sum(function (ut) { return ut.amount + ut.fee })) * -1);
             });
           
           var newActivity = {
             _id: activity._id,
             name: activity.name,
             master: activity.master,
-            users: users,
+            users: users.select(function (u) { return { name: u.key, amount: Math.floor(u.amount) }}),
             transactions: transactions
           };
           res.send(newActivity);
