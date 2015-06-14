@@ -54,13 +54,9 @@ var data = [
     transactions: [
       {name: 'Hotel', user: 'maccosmo', "amount": 12345, "fee": 123, "currency": "eur"},
       {name: 'Taxi', user: 'olcaybuyan', "amount": 10000, "fee": 1, "currency": "eur"},
-      {name: 'Dinner', user: 'thomaspockrandt', "amount": 5000, "fee": 0, "currency": "eur"},
-      {name: 'Hotel', user: 'donnieraycrisp', "amount": 66000, "fee": 660, "currency": "eur"},
       {name: 'Taxi', user: 'kaimys', "amount": 100000, "fee": 1000, "currency": "eur"},
       {name: 'Dinner', user: 'maccosmo', "amount": 666, "fee": 0, "currency": "eur"},
       {name: 'Hotel', user: 'olcaybuyan', "amount": 12345, "fee": 0, "currency": "eur"},
-      {name: 'Taxi', user: 'thomaspockrandt', "amount": 1000, "fee": 0, "currency": "eur"},
-      {name: 'Dinner', user: 'donnieraycrisp', "amount": 10, "fee": 0, "currency": "eur"},
       {name: 'Tip', user: 'kaimys', "amount": 99, "fee": 0, "currency": "eur"}
     ]
   },

@@ -15,7 +15,7 @@ request
       _.filter(rates.CROSSRATE_LIST, function(rate) {
         return rate.ISO_CURRENCY_TO == 'EUR';
       }).each(function(rate) {
-        rates[rate.ISO_CURRENCY_FROM.toLowerCase()] = rate.PRICE_R
+        rates[rate.ISO_CURRENCY_FROM.toLowerCase()] = rate.PRICE_R;
       });
       console.log(rates);
     } catch (err) {
