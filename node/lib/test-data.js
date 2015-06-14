@@ -16,9 +16,11 @@ switch (process.env.NODE_ENV) {
 var Activity = require('./activity');
 var Transaction = require('./transaction');
 
+var allUsers = [{name: 'maccosmo'}, {name: 'olcaybuyan'}, {name: 'thomaspockrandt'}, {name: 'donnieraycrisp'}, {name: 'kaimys'}];
+
 var data = [
   {
-    activity: {name: 'Burda Hackday', master: 'maccosmo', users: [{name: 'maccosmo'}]},
+    activity: {name: 'Burda Hackday', master: 'maccosmo', users: allUsers},
     transactions: [
       {user: "maccosmo", "amount": 12345, "fee": 123, "currency": "eur"},
       {user: "olcaybuyan", "amount": 10000, "fee": 1, "currency": "eur"},
@@ -33,12 +35,34 @@ var data = [
     ]
   },
   {
-    activity: {name: 'USA Reise', master: 'olcaybuyan', users: [{name: 'olcaybuyan'}]},
-    transactions: []
+    activity: {name: 'USA Reise', master: 'maccosmo', users: allUsers},
+    transactions: [
+      {user: "maccosmo", "amount": 12345, "fee": 123, "currency": "eur"},
+      {user: "olcaybuyan", "amount": 10000, "fee": 1, "currency": "eur"},
+      {user: "thomaspockrandt", "amount": 5000, "fee": 0, "currency": "eur"},
+      {user: "donnieraycrisp", "amount": 66000, "fee": 660, "currency": "eur"},
+      {user: "kaimys", "amount": 100000, "fee": 1000, "currency": "eur"},
+      {user: "maccosmo", "amount": 666, "fee": 0, "currency": "eur"},
+      {user: "olcaybuyan", "amount": 12345, "fee": 0, "currency": "eur"},
+      {user: "thomaspockrandt", "amount": 1000, "fee": 0, "currency": "eur"},
+      {user: "donnieraycrisp", "amount": 10, "fee": 0, "currency": "eur"},
+      {user: "kaimys", "amount": 99, "fee": 0, "currency": "eur"}
+    ]
   },
   {
-    activity: {name: 'Roundtrip', master: 'thomaspockrandt', users: [{name: 'thomaspockrandt'}]},
-    transactions: []
+    activity: {name: 'Roundtrip', master: 'maccosmo', users: allUsers},
+    transactions: [
+      {user: "maccosmo", "amount": 12345, "fee": 123, "currency": "eur"},
+      {user: "olcaybuyan", "amount": 10000, "fee": 1, "currency": "eur"},
+      {user: "thomaspockrandt", "amount": 5000, "fee": 0, "currency": "eur"},
+      {user: "donnieraycrisp", "amount": 66000, "fee": 660, "currency": "eur"},
+      {user: "kaimys", "amount": 100000, "fee": 1000, "currency": "eur"},
+      {user: "maccosmo", "amount": 666, "fee": 0, "currency": "eur"},
+      {user: "olcaybuyan", "amount": 12345, "fee": 0, "currency": "eur"},
+      {user: "thomaspockrandt", "amount": 1000, "fee": 0, "currency": "eur"},
+      {user: "donnieraycrisp", "amount": 10, "fee": 0, "currency": "eur"},
+      {user: "kaimys", "amount": 99, "fee": 0, "currency": "eur"}
+    ]
   },
   {
     activity: {name: 'Pool Party', master: 'donnieraycrisp', users: [{name: 'donnieraycrisp'}]},
