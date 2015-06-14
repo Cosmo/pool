@@ -87,13 +87,19 @@ server.get('/activities', function (req, res, next) {
 server.get('/activities/:id', activityDetail);
 
 server.post('/activities/:activity/transactions', function (req, res, next) {
+  var amount;
+  if (req.body.currency != 'eur') {
+    amount = Math.round(rates[req.body.currency] * req.body.amount);
+  } else {
+    amount = req.body.amount;
+  }
   var transaction = {
     activity: req.params.activity,
     user: req.headers['x-header'],
     name: req.body.name,
-    amount: parseInt(req.body.amount),
+    amount: amount,
     fee: parseInt(req.body.fee),
-    currency: req.body.currency
+    currency: 'eur'
   };
   Transaction.create(transaction, function (err, newTransaction) {
     if (err) {
